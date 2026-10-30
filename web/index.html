@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#12233d">
+    <title>Fieldnotes — Research Assistant</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="Fieldnotes home"><span class="brand-mark">F</span> Fieldnotes</a>
+      <span id="mode-badge" class="local-badge"><span></span> LIVE WEB</span>
+    </header>
+    <main>
+      <section class="intro">
+        <div class="eyebrow">A TRANSPARENT RESEARCH ASSISTANT</div>
+        <h1>Good research starts<br>with better questions.</h1>
+        <p>Ask a question. Follow the plan, inspect the tools, and see exactly which sources support the answer.</p>
+      </section>
+      <section class="workspace" aria-label="Research workspace">
+        <form id="research-form" class="question-card">
+          <label for="question">What would you like to research?</label>
+          <textarea id="question" name="question" maxlength="500" required placeholder="e.g. Which approaches can help cities reduce heat risks?"></textarea>
+          <div class="form-footer">
+            <span class="live-note">Live web search · Internet access required</span>
+            <button id="submit" type="submit">Research <span aria-hidden="true">→</span></button>
+          </div>
+          <div id="error" class="error" role="alert" hidden></div>
+        </form>
+        <div id="empty-state" class="empty-state">
+          <span class="empty-icon">✳</span>
+          <strong>Your research trail will appear here.</strong>
+          <span>Start with a question or try one of these:</span>
+          <div class="suggestions">
+            <button type="button" class="suggestion">How can cities reduce urban heat?</button>
+            <button type="button" class="suggestion">What health risks come with extreme heat?</button>
+            <button type="button" class="suggestion">Tell me about quantum cooking on Mars</button>
+          </div>
+        </div>
+        <section id="results" class="results" aria-live="polite" hidden>
+          <div class="result-heading"><div><div class="eyebrow">RESEARCH BRIEF <span id="result-mode" class="mode-chip"></span></div><h2 id="result-question"></h2></div><span id="confidence" class="confidence"></span></div>
+          <div class="answer-card"><div class="section-label">SHORT ANSWER</div><p id="short-answer"></p></div>
+          <div class="two-column">
+            <section class="panel"><div class="section-label">RESEARCH PLAN</div><ol id="plan" class="plan-list"></ol></section>
+            <section class="panel"><div class="section-label">TOOL ACTIVITY <span class="tool-count"></span></div><div id="tools" class="tool-list"></div></section>
+          </div>
+          <section class="panel findings-panel"><div class="section-label">KEY FINDINGS</div><div id="findings"></div></section>
+          <section class="panel"><div class="section-label">SOURCES <span id="source-count" class="muted"></span></div><div id="sources" class="source-list"></div></section>
+          <div class="two-column">
+            <section class="panel"><div class="section-label">CONFIDENCE &amp; LIMITATIONS</div><p id="confidence-reason" class="confidence-reason"></p><ul id="limitations" class="plain-list"></ul></section>
+            <section class="panel"><div class="section-label">NEXT STEPS</div><ul id="next-steps" class="plain-list"></ul></section>
+          </div>
+          <p id="disclaimer" class="disclaimer">Live search may be incomplete or blocked. Verify every claim in the original cited context.</p>
+        </section>
+      </section>
+    </main>
+    <footer><span>FIELDNOTES / RESEARCH ASSISTANT</span><span id="footer-mode">Live search · Search results and page text may be incomplete</span></footer>
+    <script src="/app.js" defer></script>
+  </body>
+</html>
